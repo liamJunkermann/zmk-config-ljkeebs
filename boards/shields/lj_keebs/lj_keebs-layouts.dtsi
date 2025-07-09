@@ -74,7 +74,7 @@
 	position_map {
 		compatible = "zmk,physical-layout-position-map";
 		
-		physical_layout0: base {
+		physical_posmap0: base {
 			physical-layout = <&physical_layout0>;
 			positions
 			= < 6  7  2  0  3  8  9  4  1  5 10 11>
