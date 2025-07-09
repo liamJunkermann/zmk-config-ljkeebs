@@ -67,7 +67,7 @@
 		, <&key_physical_attrs 100 150  750  800 (-2000)     0     0>
 		, <&key_physical_attrs 100 100  950  775 (-1500)     0     0>
 		;
-	}
+	};
 };
 
 / {
@@ -75,7 +75,7 @@
 		compatible = "zmk,physical-layout-position-map";
 		
 		physical_layout0: base {
-			physical-layout = <&physical_layout0>
+			physical-layout = <&physical_layout0>;
 			positions
 			= < 6  7  2  0  3  8  9  4  1  5 10 11>
 			, <18 19 14 12 15 20 21 16 13 17 22 23>
@@ -83,7 +83,6 @@
 			, <42 43 38 36 39 44 45 40 37 41 46 47>
 			, <50 48 51 54 55 56 57 52 49 53>
 			;
-		}
-		
-	}
-}
+		};
+	};
+};
