@@ -1,0 +1,11 @@
+file_format: "1"
+id: lj_keebs
+name: LJ Keebs
+type: shield
+url: https://github.com/liamJunkermann/lj_keebs/
+requires: [nice_nano_v2]
+features:
+  - keys
+siblings:
+  - lj_keebs_left
+  - lj_keebs_right
