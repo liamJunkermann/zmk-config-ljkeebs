@@ -1,0 +1,7 @@
+# No whitespace after the comma or in your part name!
+config SHIELD_LJ_KEEBS_LEFT
+    def_bool $(shields_list_contains,lj_keebs_left)
+
+# No whitespace after the comma or in your part name!
+config SHIELD_LJ_KEEBS_RIGHT
+    def_bool $(shields_list_contains,lj_keebs_right)
