@@ -44,8 +44,4 @@
 		, <&pro_micro 14 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
 		;
 	};
-
-    &layout_0 {
-        transform = <&default_transform>;
-    };
 };
