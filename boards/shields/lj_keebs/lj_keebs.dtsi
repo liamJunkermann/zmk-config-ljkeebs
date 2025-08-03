@@ -1,47 +1,32 @@
+/*
+ * Copyright (c) 2023 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 #include <dt-bindings/zmk/matrix_transform.h>
-// #include "lj_keebs-layouts.dtsi"
 
 / {
-	chosen {
-		zmk,kscan = &kscan0;
-		zmk,matrix_transform = &default_transform;
-		// zmk,physical-layout = &layout_0;
-	};
-	
-	default_transform: matrix_transform {
-		compatible = "zmk,matrix_transform";
-		columns = <12>;
-		rows = <5>;
-		
-		//  Layout with switch IDs (refer to schematic)
-		//  | SW04 | SW08 | SW13 | SW18 | SW23 | SW27 |      |           |      | SW27 | SW23 | SW18 | SW13 | SW08 | SW04 |  
-		//  | SW03 | SW07 | SW12 | SW17 | SW22 | SW26 |      |           |      | SW26 | SW22 | SW17 | SW12 | SW07 | SW03 | 
-		//  | SW02 | SW06 | SW11 | SW16 | SW21 | SW25 |      |           |      | SW25 | SW21 | SW16 | SW11 | SW06 | SW02 | 
-		//  | SW01 | SW05 | SW10 | SW15 | SW20 | SW24 |      |           |      | SW24 | SW20 | SW15 | SW10 | SW05 | SW01 | 
-		//  |      |      | SW09 | SW14 | SW19 | SW29 | SW28 |           | SW28 | SW29 | SW19 | SW14 | SW09 |      |      | 
-		// Notes:
-		// SW28 is assigned to R4C5, SW29 is assigned to R4C1
-		map = <
-		RC(0, 0) RC(0, 1) RC(0, 2) RC(0, 3) RC(0, 4) RC(0, 5)                        RC(0, 6)  RC(0, 7) RC(0, 8) RC(0, 9)  RC(0, 10) RC(0, 11)
-		RC(1, 0) RC(1, 1) RC(1, 2) RC(1, 3) RC(1, 4) RC(1, 5)                        RC(1, 6)  RC(1, 7) RC(1, 8) RC(1, 9)  RC(1, 10) RC(1, 11)
-		RC(2, 0) RC(2, 1) RC(2, 2) RC(2, 3) RC(2, 4) RC(2, 5)                        RC(2, 6)  RC(2, 7) RC(2, 8) RC(2, 9)  RC(2, 10) RC(2, 11)
-		RC(3, 0) RC(3, 1) RC(3, 2) RC(3, 3) RC(3, 4) RC(3, 5)                        RC(3, 6)  RC(3, 7) RC(3, 8) RC(3, 9)  RC(3, 10) RC(3, 11)
-                          RC(4, 2) RC(4, 3) RC(4, 4) RC(4, 1) RC(4, 5)     RC(4, 6)  RC(4, 10) RC(4, 7) RC(4, 8) RC(4, 9)
-		>;
-	};
-	
-	kscan0: kscan {
-		compatible = "zmk,kscan-gpio-matrix";
-		wakeup-source;
-		
-		diode-direction = "col2row";
-		
-		row-gpios
-		= <&pro_micro 20 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
-		, <&pro_micro 15 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
-		, <&pro_micro 18 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
-		, <&pro_micro 19 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
-		, <&pro_micro 14 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
-		;
-	};
+
+    chosen {
+        zmk,matrix_transform = &default_transform;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <5>;
+// | SW6  | SW5  | SW4  | SW3  | SW2  | SW1  |                 | SW1  | SW2  | SW3  | SW4  | SW5  | SW6  |
+// | SW12 | SW11 | SW10 | SW9  | SW8  | SW7  |                 | SW7  | SW8  | SW9  | SW10 | SW11 | SW12 |
+// | SW18 | SW17 | SW16 | SW15 | SW14 | SW13 |                 | SW13 | SW14 | SW15 | SW16 | SW17 | SW18 |
+// | SW24 | SW23 | SW22 | SW21 | SW20 | SW19 |      |   |      | SW19 | SW20 | SW21 | SW22 | SW23 | SW24 |
+//               | SW30 | SW29 | SW28 | SW27 | SW26 |   | SW26 | SW27 | SW28 | SW29 | SW30 |
+        map = <
+RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)                 RC(0,6)  RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11)
+RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)                 RC(1,6)  RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
+RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                 RC(2,6)  RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
+RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)                 RC(3,6)  RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11)
+                RC(4,2) RC(4,3) RC(4,4) RC(4,1) RC(4,5) RC(4,6) RC(4,10) RC(4,7) RC(4,8) RC(4,9)
+        >;
+    };
 };

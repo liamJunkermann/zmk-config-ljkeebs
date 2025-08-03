@@ -3,7 +3,7 @@ id: lj_keebs
 name: LJ Keebs
 type: shield
 url: https://github.com/liamJunkermann/lj_keebs/
-requires: [nice_nano_v2]
+requires: [pro_micro]
 features:
   - keys
 siblings:

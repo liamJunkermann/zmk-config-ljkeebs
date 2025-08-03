@@ -1,17 +1,19 @@
+# Copyright (c) 2023 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
 if SHIELD_LJ_KEEBS_LEFT
 
-# Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
-    default "LJ Keebs"
+    default "LJ KEEBS"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-endif
+endif # SHIELD_LJ_KEEBS_LEFT
 
 if SHIELD_LJ_KEEBS_LEFT || SHIELD_LJ_KEEBS_RIGHT
 
 config ZMK_SPLIT
     default y
 
-endif
+endif # SHIELD_LJ_KEEBS_LEFT || SHIELD_LJ_KEEBS_RIGHT
